@@ -21,18 +21,18 @@
 
 ### Tasks:
 
-- [ ] Main page listing all questions with details, date and answer count
+- [x] Main page listing all questions with details, date and answer count
 - [ ] Feature to sort questions on Main page by alphabet, date or answer count
-- [ ] Detail page of a question shows who asked it and lists all answers with date and users
-- [ ] Feature to add new question (redirects to question detail page after save)
-- [ ] Feature to add new answer (location: question detail page)
-- [ ] Feature to delete question (later extend so only the owner can delete it)
-- [ ] Feature to delete answer (location: question delete page) (later extend so only the owner can
+- [x] Detail page of a question shows who asked it and lists all answers with date and users
+- [x] Feature to add new question (redirects to question detail page after save)
+- [x] Feature to add new answer (location: question detail page)
+- [x] Feature to delete question (later extend so only the owner can delete it)
+- [x] Feature to delete answer (location: question delete page) (later extend so only the owner can
   delete it)
-- [ ] Feature to Register new user
-- [ ] Feature to Login with user and store session (who is currently logged in is always visible on
+- [x] Feature to Register new user
+- [x] Feature to Login with user and store session (who is currently logged in is always visible on
   frontend)
-- [ ] Feature to Logout user
+- [x] Feature to Logout user
 - [ ] Users list page: shows username, registration date, number of questions, number of answers
 - [ ] Feature to mark the accepted answer for the user's own question
 - [ ] Write tests for the service layer
@@ -42,8 +42,8 @@
 - [ ] OPTIONAL: Admin user type can delete any question or answer
 - [ ] OPTIONAL: Filter by question titles  (location: main page)
 - [ ] OPTIONAL: Feature to tag questions
-- [ ] OPTIONAL: Feature to edit questions (limited to the ones created by the user)
-- [ ] OPTIONAL: Feature to edit answers (limited to the ones created by the user)
+- [x] OPTIONAL: Feature to edit questions (limited to the ones created by the user)
+- [x] OPTIONAL: Feature to edit answers (limited to the ones created by the user)
 - [ ] OPTIONAL: Feature to calculate reputation of the user and display them differently if they are
   very active on the site (display reputation on user list page too)
 
