@@ -11,14 +11,14 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
-    id       BIGSERIAL PRIMARY KEY,
+    id       SERIAL PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE roles
 (
-    id   BIGSERIAL PRIMARY KEY,
+    id   SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
 );
 
@@ -29,22 +29,22 @@ VALUES ('ADMIN');
 
 CREATE TABLE user_roles
 (
-    user_id BIGINT NOT NULL,
-    role_id BIGINT NOT NULL,
+    user_id INTEGER NOT NULL,
+    role_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
     FOREIGN KEY (role_id) REFERENCES roles (id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_sessions
 (
-    user_id BIGINT NOT NULL,
+    user_id INTEGER NOT NULL,
     token   VARCHAR(500)
 );
 
 CREATE TABLE questions
 (
-    id         BIGSERIAL PRIMARY KEY,
-    user_id    BIGINT                              NOT NULL,
+    id         SERIAL PRIMARY KEY,
+    user_id    INTEGER                              NOT NULL,
     title      VARCHAR(100)                        NOT NULL,
     content    TEXT                                NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -53,9 +53,9 @@ CREATE TABLE questions
 
 CREATE TABLE answers
 (
-    id          BIGSERIAL PRIMARY KEY,
-    user_id     BIGINT                              NOT NULL,
-    question_id BIGINT                              NOT NULL,
+    id          SERIAL PRIMARY KEY,
+    user_id     INTEGER                              NOT NULL,
+    question_id INTEGER                              NOT NULL,
     content     TEXT                                NOT NULL,
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     FOREIGN KEY (user_id) references users (id) ON DELETE CASCADE,
@@ -63,20 +63,20 @@ CREATE TABLE answers
 );
 
 ALTER TABLE questions
-    ADD COLUMN accepted_answer_id BIGINT,
+    ADD COLUMN accepted_answer_id INTEGER,
     ADD FOREIGN KEY (accepted_answer_id) REFERENCES answers (id);
 
 
 CREATE TABLE tags
 (
-    id   BIGSERIAL PRIMARY KEY,
+    id   SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE questions_tags
 (
-    question_id BIGINT NOT NULL,
-    tag_id      BIGINT NOT NULL,
+    question_id INTEGER NOT NULL,
+    tag_id      INTEGER NOT NULL,
     PRIMARY KEY (question_id, tag_id),
     FOREIGN KEY (question_id) REFERENCES questions (id) ON DELETE CASCADE,
     FOREIGN KEY (tag_id) REFERENCES tags (id) ON DELETE CASCADE
